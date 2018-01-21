@@ -1,0 +1,37 @@
+{
+    "build": {
+      "extra_flags": "-DMCU_STM32F406VG -mthumb -DSTM32_HIGH_DENSITY -DSTM32F2 -DSTM32F4 -DBOARD_discovery_f4 -DARDUINO_STM32F4_WIO_GPS",
+      "f_cpu": "168000000L",
+      "mcu": "cortex-m4",
+      "cpu": "cortex-m4",
+      "hwids": [
+        ["0x0483", "0xDF11"]
+      ],
+      "ldscript": "jtag.ld",
+      "variant": "discovery_f407",
+      "variant_system_lib": "lib_f407.a",
+      "vect": "VECT_TAB_BASE",
+      "density": "STM32_HIGH_DENSITY",
+      "error_led_port": "GPIOD",
+      "error_led_pin": "14"
+    },
+    "frameworks": ["arduino"],
+    "name": "Wio LTE",
+    "upload": {
+      "tool":"dfu_upload",
+      "protocol":"dfu",
+      "require_upload_port": true,
+      "use_1200bps_touch":true,
+      "auto_reset":true,
+      "file_type":"elf",
+      "usbID":"0483:df11",
+      "altID":0,
+      "dfuse_addr": "0x8000000",
+      "maximum_ram_size": 196608,
+      "maximum_size": 1048576
+    },
+    "uploader":"stm32fflash",
+
+    "url": "http://example.com",
+    "vendor": "Seeed"
+  }

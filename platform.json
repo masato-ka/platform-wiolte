@@ -1,0 +1,45 @@
+{
+  "name": "Seeed STM32F4 Boards",
+  "title": "Seeed Wio LTE",
+  "description": "Seeed Wio LTE is compatible Arduino board include LTE module. The board implement to many IoT application usecase with LTE communication. This package is 3rd party.",
+  "url": "http://example.com",
+  "homepage": "http://example.com",
+  "license": "Apache-2.0",
+  "engines": {
+    "platformio": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://example.com"
+  },
+  "version": "0.1.0",
+  "packageRepositories": [
+    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
+    "http://dl.platformio.org/packages/manifest.json",
+    "https://raw.githubusercontent.com/eerimoq/simba/master/make/platformio/manifest.json"
+  ],
+  "frameworks": {
+    "arduino": {
+      "package": "framework-arduinoWio_LTE",
+      "script": "builder/frameworks/arduino.py"
+    }
+   
+  },
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "version": ">=1.40803.0,<1.40805.0"
+    },
+    "framework-arduinoWio_LTE": {
+      "type": "framework",
+      "optional": true,
+      "version": "~2.0.0"
+    },
+    "tool-stm32tool": {
+      "type": "uploader",
+      "version": "~1.0.0"
+    }
+  }
+}
+
+
