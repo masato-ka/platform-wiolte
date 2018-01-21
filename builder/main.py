@@ -48,6 +48,7 @@ env.Replace(
         "-Os",
         "-w",
         "-MMD",
+        "--param", "max-inline-insns-single=500",
         "-ffunction-sections",
         "-fdata-sections",
         "-nostdlib",
@@ -57,6 +58,7 @@ env.Replace(
         "-mthumb",
     ],
 
+ 
     CDEFINE=[
         # Define to gcc build parameter(-D Options)
         "-DSTM32_HIGH_DENSITY"
@@ -83,7 +85,7 @@ env.Replace(
         "-D%s" % board.get("build.vect"),
         "-DERROR_LED_PORT=%s" % board.get("build.error_led_port"),
         "-DERROR_LED_PIN=%s" % board.get("build.error_led_pin"),
-        "-DF_CPU=%s" % board.get("build.f_cpu"),
+        "-DF_CPU=%s",# % board.get("build.f_cpu"),
         "-DARDUINO=1.6",
         "-DARDUINO_WioGpsM4",
         "-DARDUINO_ARCH_ARM",
@@ -121,8 +123,6 @@ env.Replace(
         "-Wl,--gc-sections", 
         "-mcpu=%s" % board.get("build.mcu"),
         "-Wl,-Map,$BUILD_DIR/firmware.map",
-        "-lm",
-        "-lgcc",
         "-mthumb",
         "-Wl,--cref",
         "-Wl,--check-sections", 
@@ -132,6 +132,8 @@ env.Replace(
         "-Wl,--warn-section-align",
         "-Wl,--warn-unresolved-symbols",
     ],
+    
+    LIBS=["c", "gcc", "m", "stdc++", "nosys", "c_s"],
 
     UPLOADER="st-flash",
     UPLOADERFLAGS=[
