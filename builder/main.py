@@ -9,14 +9,11 @@ from SCons.Script import AlwaysBuild, Builder, Default, DefaultEnvironment
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
+framework =  platform.frameworks['arduino']['package']
 upload_protocol = env.subst("$UPLOAD_PROTOCOL")
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoWio_LTE")
-FRAMEWORK_VERSION = platform.get_package_version("framework-arduinoWio_LTE")
+FRAMEWORK_DIR = platform.get_package_dir(framework)
+FRAMEWORK_VERSION = platform.get_package_version(framework)
 assert isdir(FRAMEWORK_DIR)
-
-#TODO 
-#warning: Ignoring missing SConscript '/Users/kawamuramasato/.platformio/packages/framework-arduinoWio_LTE/tools/platformio-build.py'
-#File "/Users/kawamuramasato/.platformio/platforms/WioLTE/builder/frameworks/arduino.py", line 33, in <module>
 
 env.Replace(
     AR="arm-none-eabi-ar",
@@ -29,7 +26,7 @@ env.Replace(
     SIZETOOL="arm-none-eabi-size",
     PROGNAME="firmware",
     PROGSUFFIX=".elf",
-    FRAMEWORK_DIR = platform.get_package_dir("framework-arduinoWio_LTE"),
+    FRAMEWORK_DIR = platform.get_package_dir(framework),
     ARFLAGS=["rcs"],
     ASFLAGS=["-x", "assembler-with-cpp"],
 

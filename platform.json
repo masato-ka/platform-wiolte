@@ -20,8 +20,8 @@
     {
       "framework-Seeed_STM32F4": [
         {
-          "url": "https://github.com/Seeed-Studio/Seeed_Platform/raw/master/Seeed_STM32F4_v1.1.1.tar.bz2",
-          "sha1": "adce2cd30a830d71cb6572575bf08461b7b73c07",
+          "url": "https://github.com/masato-ka/wio-lte-package-repository/raw/master/Seeed_STM32F4_v1.1.1.tar.gz",
+          "sha1": "529146c67eafc228763fd3a37ee97d0fe1ba22fa",
           "version": "1.1.1",
           "system": "*"
         }
