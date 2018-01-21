@@ -7,8 +7,8 @@ This development platform is 3rd party platform.
 # Usage
 
 1. [Install PlatformIO](http://platformio.org)
-2. This repository clone to Home directory of PlatformIO
-
+2. This repository clone to $USER_HOME/.platformio/package (package directory in PlathomeIO home directory).
+3. [WioLTEforArduino](https://github.com/SeeedJP/WioLTEforArduino) clone to $USER_HOME/.platformio/package.
 
 # Configuration
 
