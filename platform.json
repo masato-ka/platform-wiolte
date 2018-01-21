@@ -16,24 +16,35 @@
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json",
-    "https://raw.githubusercontent.com/eerimoq/simba/master/make/platformio/manifest.json"
+    "https://raw.githubusercontent.com/eerimoq/simba/master/make/platformio/manifest.json",
+    {
+      "framework-Seeed_STM32F4": [
+        {
+          "url": "https://github.com/Seeed-Studio/Seeed_Platform/raw/master/Seeed_STM32F4_v1.1.1.tar.bz2",
+          "sha1": "adce2cd30a830d71cb6572575bf08461b7b73c07",
+          "version": "1.1.1",
+          "system": "*"
+        }
+      ]
+    }
+
   ],
   "frameworks": {
     "arduino": {
-      "package": "framework-arduinoWio_LTE",
+      "package": "framework-Seeed_STM32F4",
       "script": "builder/frameworks/arduino.py"
     }
-   
+
   },
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "version": ">=1.40803.0,<1.40805.0"
     },
-    "framework-arduinoWio_LTE": {
+    "framework-Seeed_STM32F4": {
       "type": "framework",
       "optional": true,
-      "version": "~2.0.0"
+      "version": "~1.1.1"
     },
     "tool-stm32duino": {
       "type": "uploader",
