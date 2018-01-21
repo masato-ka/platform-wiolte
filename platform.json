@@ -1,7 +1,7 @@
 {
   "name": "Seeed STM32F4 Boards",
   "title": "Seeed Wio LTE",
-  "description": "Seeed Wio LTE is compatible Arduino board include LTE module. The board implement to many IoT application usecase with LTE communication. This package is 3rd party.",
+  "description": "Seeed Wio LTE is compatible Arduino board include LTE module. The board implement to many IoT application usecase with LTE communication.",
   "url": "http://example.com",
   "homepage": "http://example.com",
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
       "optional": true,
       "version": "~2.0.0"
     },
-    "tool-stm32tool": {
+    "tool-stm32duino": {
       "type": "uploader",
       "version": "~1.0.0"
     }

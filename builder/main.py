@@ -198,7 +198,7 @@ if upload_protocol == "dfu":
     print _upload_flags
     # TODO Change suffix for OS adapt platform.
     _tool_dir = join(env.PioPlatform().get_package_dir(
-    "tool-stm32tool"),"macosx")
+    "tool-stm32duino"),"dfu-util")
     print "elf build and upload."
     # TODO Please fix me for UPLOAD file. $SOURCES to .pioenvs/wio_lte/firmware.elf
     env.Replace(
@@ -207,7 +207,7 @@ if upload_protocol == "dfu":
         UPLOADERFLAGS=_upload_flags,
         DFUSE_ADDR=_dfuse_addr,
 #        UPLOADERFLAGS=["$UPLOAD_PORT"] + _upload_flags,
-        UPLOADCMD="$UPLOADER $UPLOADERFLAGS $PROJECT_DIR/$SOURCES $DFUSE_ADDR")
+        UPLOADCMD="$UPLOADER -a %s -d %s  -D $PROJECT_DIR/$SOURCES -s $DFUSE_ADDR -R" % (_altid,_usbids))
 else:
     print "Failed upload"
     exit(1)

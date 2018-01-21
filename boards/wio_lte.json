@@ -18,7 +18,7 @@
     "frameworks": ["arduino"],
     "name": "Wio LTE",
     "upload": {
-      "tool":"dfu_upload",
+      "tool":"dfu-util",
       "protocol":"dfu",
       "require_upload_port": true,
       "use_1200bps_touch":true,
