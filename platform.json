@@ -21,7 +21,7 @@
       "framework-Seeed_STM32F4": [
         {
           "url": "https://github.com/masato-ka/wio-lte-package-repository/raw/master/Seeed_STM32F4_v1.2.2.tar.gz",
-          "sha1": "2a88134805bceec5786f3451d8cfe58bbab0f843",
+          "sha1": "02d5f11270a6d7a2a7649e66587e719655866eb3",
           "version": "1.2.2",
           "system": "*"
         }
