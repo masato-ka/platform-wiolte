@@ -7,12 +7,15 @@ This development platform is 3rd party platform.
 # Usage
 
 1. [Install PlatformIO](http://platformio.org)
-2. This repository clone to $USER_HOME/.platformio/package (package directory in PlathomeIO home directory).
-3. [WioLTEforArduino](https://github.com/SeeedJP/WioLTEforArduino) clone to $USER_HOME/.platformio/package.
+2. Please clone this repository to $USER_HOME/.platformio/package (package directory in PlathomeIO home directory).
+3. Please clone [WioLTEforArduino](https://github.com/SeeedJP/WioLTEforArduino) to '$USER_HOME/.platformio/lib'.
 
 # Configuration
 
-TODO.
+# changeset
+
+* 2018/6/10 version 1.2.2
+    * Update arduino framewark to ver 1.2.2.
 
 # Author
 Twitter: @masato-ka
