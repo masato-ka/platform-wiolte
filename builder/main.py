@@ -196,8 +196,12 @@ if upload_protocol == "dfu":
     ]
     print _upload_flags
     # TODO Change suffix for OS adapt platform.
-    _tool_dir = join(env.PioPlatform().get_package_dir(
-    "tool-stm32duino"),"dfu-util")
+    if os.name == 'nt': #Windows Path
+        _tool_dir = join(env.PioPlatform().get_package_dir("tool-stm32duino"))
+        _upload_tool = _upload_tool + '.exe' # Add suffix.
+    else: #OSX and Linux Path
+        _tool_dir = join(env.PioPlatform().get_package_dir(
+        "tool-stm32duino"),"dfu-util")
     print "elf build and upload."
     # TODO Please fix me for UPLOAD file. $SOURCES to .pioenvs/wio_lte/firmware.elf
     env.Replace(
