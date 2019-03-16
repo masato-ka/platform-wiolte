@@ -56,6 +56,7 @@ env.Replace(
         "-fno-exceptions",
         "-mcpu=%s" % board.get("build.mcu"),
         "-mthumb",
+        "-std=gnu++11"
     ],
 
  
@@ -75,7 +76,8 @@ env.Replace(
         "-DSTM32F2",
         "-DSTM32F4",
         "-DBOARD_discovery_f4",
-        "-DARDUINO_STM32F4_WIO_GPS"
+        "-DARDUINO_STM32F4_WIO_GPS",
+        "-DARDUINO_ARCH_STM32F"
     ],
 
     CPPDEFINES=[
@@ -94,7 +96,8 @@ env.Replace(
         "-DSTM32F2",
         "-DSTM32F4",
         "-DBOARD_discovery_f4",
-        "-DARDUINO_STM32F4_WIO_GPS"
+        "-DARDUINO_STM32F4_WIO_GPS",
+        "-DARDUINO_ARCH_STM32F",
     ],
 
     CPPPATH=[
