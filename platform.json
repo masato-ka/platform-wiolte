@@ -17,17 +17,7 @@
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json",
     "https://raw.githubusercontent.com/eerimoq/simba/master/make/platformio/manifest.json",
-    {
-      "framework-Seeed_STM32F4": [
-        {
-          "url": "https://github.com/masato-ka/wio-lte-package-repository/raw/master/Seeed_STM32F4_v1.2.2.tar.gz",
-          "sha1": "02d5f11270a6d7a2a7649e66587e719655866eb3",
-          "version": "1.2.2",
-          "system": "*"
-        }
-      ]
-    }
-
+    "https://dl.bintray.com/masato-ka/dl-package/manifest.json"
   ],
   "frameworks": {
     "arduino": {
