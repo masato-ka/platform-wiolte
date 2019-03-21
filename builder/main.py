@@ -2,10 +2,11 @@
     Build script for test.py
     test-builder.py
 """
-
+import platform as pl
 from os.path import join,isdir,basename
 from SCons.Script import AlwaysBuild, Builder, Default, DefaultEnvironment
 
+uname = pl.uname()
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
@@ -191,6 +192,7 @@ _upload_tool = "serial_upload"
 _upload_flags = ["{upload.altID}", "{upload.usbID}"]
 if upload_protocol == "dfu":
     _upload_tool = env.BoardConfig().get("upload.tool")#"maple_upload"
+    _upload_tool = _upload_tool + ".exe" if uname[0] == "Windows" else  _upload_tool
     _usbids = env.BoardConfig().get("upload.usbID")
     _altid = env.BoardConfig().get("upload.altID")
     _dfuse_addr = env.BoardConfig().get("upload.dfuse_addr")
@@ -198,9 +200,18 @@ if upload_protocol == "dfu":
         _altid, _usbids
     ]
     print _upload_flags
-    # TODO Change suffix for OS adapt platform.
+
+    suffix_tool_path = ""
+    if uname[0] == "Windows":
+        suffix_tool_path = join("win","dfu-util-0.8-mingw32")
+    elif uname[0] == "Darwin":
+        suffix_tool_path = join("macos","dfu-util")
+    else: # The Linux Archtecture.
+        #TODO choose linux64 or linux.
+        suffix_tool_path = join("linux64", "dfu-util")
     _tool_dir = join(env.PioPlatform().get_package_dir(
-    "tool-stm32duino"),"dfu-util")
+    "stm32_dfu_upload_tool"), suffix_tool_path)
+
     print "elf build and upload."
     # TODO Please fix me for UPLOAD file. $SOURCES to .pioenvs/wio_lte/firmware.elf
     env.Replace(

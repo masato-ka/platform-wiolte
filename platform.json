@@ -36,7 +36,7 @@
       "optional": true,
       "version": "~1.2.2"
     },
-    "tool-stm32duino": {
+    "stm32_dfu_upload_tool": {
       "type": "uploader",
       "version": "~1.0.0"
     }
