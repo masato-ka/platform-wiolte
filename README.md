@@ -61,6 +61,9 @@ Finally click Finish. and strat create new project. please wait few minuts.
 
 # Changeset
 
+* 2019/3/21 version 1.2.6
+    * Bug fix. g++ compaile option "f_cpu" adding. 
+
 * 2019/3/21 version 1.2.5
     * Update Arduino framework to ver 1.2.5(JP Mirror 1.0)
     * Change Upload tool to Seeed STM32 DFU Upload tool. because bug fix.

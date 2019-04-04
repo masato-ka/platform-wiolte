@@ -88,7 +88,7 @@ env.Replace(
         "-D%s" % board.get("build.vect"),
         "-DERROR_LED_PORT=%s" % board.get("build.error_led_port"),
         "-DERROR_LED_PIN=%s" % board.get("build.error_led_pin"),
-        "-DF_CPU=%s",# % board.get("build.f_cpu"),
+        "-DF_CPU=%s" % board.get("build.f_cpu"),
         "-DARDUINO=1.6",
         "-DARDUINO_WioGpsM4",
         "-DARDUINO_ARCH_ARM",
