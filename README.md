@@ -61,7 +61,7 @@ Finally click Finish. and strat create new project. please wait few minuts.
 
 # Changeset
 
-* 2019/3/21 version 1.2.6
+* 2019/4/5 version 1.2.6
     * Bug fix. g++ compaile option "f_cpu" adding. 
 
 * 2019/3/21 version 1.2.5
