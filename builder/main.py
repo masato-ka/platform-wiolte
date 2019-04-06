@@ -205,7 +205,7 @@ if upload_protocol == "dfu":
     if uname[0] == "Windows":
         suffix_tool_path = join("win","dfu-util-0.8-mingw32")
     elif uname[0] == "Darwin":
-        suffix_tool_path = join("macos","dfu-util")
+        suffix_tool_path = join("macosx","dfu-util")
     else: # The Linux Archtecture.
         #TODO choose linux64 or linux.
         suffix_tool_path = join("linux64", "dfu-util")
