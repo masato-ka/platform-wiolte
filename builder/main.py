@@ -199,7 +199,7 @@ if upload_protocol == "dfu":
     _upload_flags = [
         _altid, _usbids
     ]
-    print _upload_flags
+    print(_upload_flags)
 
     suffix_tool_path = ""
     if uname[0] == "Windows":
@@ -212,7 +212,7 @@ if upload_protocol == "dfu":
     _tool_dir = join(env.PioPlatform().get_package_dir(
     "stm32_dfu_upload_tool"), suffix_tool_path)
 
-    print "elf build and upload."
+    print("elf build and upload.")
     # TODO Please fix me for UPLOAD file. $SOURCES to .pioenvs/wio_lte/firmware.elf
     env.Replace(
         UPLOAD_PORT="dfu",
@@ -222,7 +222,7 @@ if upload_protocol == "dfu":
 #        UPLOADERFLAGS=["$UPLOAD_PORT"] + _upload_flags,
         UPLOADCMD="$UPLOADER -a %s -d %s  -D $PROJECT_DIR/$SOURCES -s $DFUSE_ADDR -R" % (_altid,_usbids))
 else:
-    print "Failed upload"
+    print("Failed upload")
     exit(1)
 
 #Build and Linkable firmware
